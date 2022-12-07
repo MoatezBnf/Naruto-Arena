@@ -42,4 +42,7 @@ body{
 .form-check-label{
     color: gray;
 }
-  
+/*#registermodal{
+    max-height:550px; 
+    overflow-y: auto;
+}
