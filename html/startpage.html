@@ -20,7 +20,7 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto font-monospace fw-bold lh-base">
                   <li class="nav-item pe-3">
-                    <a class="nav-link active" href="#">STARTPAGE</a>                  
+                    <a class="nav-link active" href="startpage.html">STARTPAGE</a>                  
                   </li>
                   <li class="nav-item pe-3">
                     <a class="nav-link active" href="#">START PLAYING</a>                  
@@ -66,13 +66,13 @@
                                 <form>
                                     <!-- Email input -->
                                     <div class="form-outline mb-4">
-                                      <input type="email" id="email" class="form-control" placeholder="Email address" />
+                                      <input type="email" id="email" class="form-control" placeholder="Email address"/>
                                       <label class="form-label" for="email"></label>
                                     </div>
                                   
                                     <!-- Password input -->
                                     <div class="form-outline mb-4">
-                                      <input type="password" id="password" class="form-control" placeholder="Password" />
+                                      <input type="password" id="password" class="form-control" placeholder="Password"/>
                                       <label class="form-label" for="password"></label>
                                     </div>
                                   
@@ -88,13 +88,13 @@
                                   
                                       <div class="col-sm-6">
                                         <!-- Simple link -->
-                                        <a href="#!" id="nabrd" class="text-decoration-none">Forgot password?</a>
+                                        <a href="#resetmodal" class="text-decoration-none ms-2" id="nabrd" data-bs-toggle="modal" data-bs-target="#resetmodal" data-bs-dismiss="modal">Forgot password?</a>
                                       </div>
                                     </div>
                                   
                                     <!-- Submit button -->
                                     <div class="d-grid gap-2">
-                                    <button type="button" class="btn btn-danger btn-block" id="submit">Sign in</button>
+                                    <input type="submit" class="btn btn-danger btn-block" value="Sign in"/>
                                     </div>
                                     <div class="text-center form-check-label mt-2">
                                         <p>Not a member?<a href="#registermodal" class="text-decoration-none ms-2" id="nabrd" data-bs-toggle="modal" data-bs-target="#registermodal" data-bs-dismiss="modal">Register</a></p>
@@ -116,7 +116,7 @@
                                 <form>
                                    <!-- Name input -->
                                    <div class="form-outline">
-                                    <input type="text" id="registerName" class="form-control" placeholder="Name" />
+                                    <input type="text" id="registerName" class="form-control" placeholder="Name"/>
                                     <label class="form-label" for="registerName"></label>
                                   </div>
                                   <!-- Username input -->
@@ -126,35 +126,60 @@
                                   </div>
                                   <!-- Email input -->
                                   <div class="form-outline">
-                                    <input type="email" id="registerEmail" class="form-control" placeholder="Email" />
+                                    <input type="email" id="registerEmail" class="form-control" placeholder="Email"/>
                                     <label class="form-label" for="registerEmail"></label>
                                   </div>
                                   <!-- Password input -->
                                   <div class="form-outline">
-                                    <input type="password" id="registerPassword" class="form-control" placeholder="Password" />
+                                    <input type="password" id="registerPassword" class="form-control" placeholder="Password"/>
                                     <label class="form-label" for="registerPassword"></label>
                                   </div>
                                   <!-- Repeat Password input -->
                                   <div class="form-outline">
-                                    <input type="password" id="registerRepeatPassword" class="form-control" placeholder="Repeat password" />
+                                    <input type="password" id="registerRepeatPassword" class="form-control" placeholder="Repeat password"/>
                                     <label class="form-label" for="registerRepeatPassword"></label>
                                   </div>
                                   <!-- Checkbox -->
                                   <div class="form-check d-flex justify-content-center mb-1">
                                     <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
-                                      aria-describedby="registerCheckHelpText" />
+                                      aria-describedby="registerCheckHelpText"/>
                                     <label class="form-check-label" for="registerCheck">
                                       I have read and agree to the terms
                                     </label>
                                   </div>
                                    <!-- Submit button -->
                                    <div class="d-grid gap-2 mt-3">
-                                    <button type="button" class="btn btn-danger btn-block" id="submit">Register</button>
-                                    </div>                   
+                                    <input type="submit" class="btn btn-danger btn-block" value="Register"/>
+                                    </div>                  
                                     <div class="text-center form-check-label mt-2">
                                       <p>Already a member?<a href="#loginmodal" class="text-decoration-none ms-2" id="nabrd" data-bs-toggle="modal" data-bs-target="#loginmodal" data-bs-dismiss="modal">Log in</a></p>
                                     </div>        
                                 </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal fade" id="resetmodal" tabindex="-1" aria-labelledby="resetmodalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <!-- Email input -->
+                                    <div class="form-outline mb-2">
+                                      <input type="email" id="email" class="form-control" placeholder="Email address"/>
+                                      <label class="form-label" for="email"></label>
+                                    </div>                               
+                                    <!-- Submit button -->
+                                    <div class="d-grid gap-2">
+                                      <input type="submit" class="btn btn-danger btn-block" value="Reset password">
+                                    </div>
+                                    <div class="text-center form-check-label mt-2">
+                                      <a href="#loginmodal" class="text-decoration-none ms-2" id="nabrd" data-bs-toggle="modal" data-bs-target="#loginmodal" data-bs-dismiss="modal">Log in</a>
+                                      </div>
+                                  </form>
                             </div>
                           </div>
                         </div>
