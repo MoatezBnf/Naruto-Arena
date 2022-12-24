@@ -42,3 +42,7 @@ body{
 .form-check-label{
     color: gray;
 }
+iframe {
+    display:block;
+    width:100%;
+}
