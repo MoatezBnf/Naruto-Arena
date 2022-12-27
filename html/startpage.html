@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+=<!DOCTYPE html>
 <html>
     <head>
         <!--META-->
@@ -197,12 +197,139 @@
                     <p>Naruto-Arena (2006-2018) is an online multiplayer strategy game, where you play as 153 characters in total. The game is no longer available.
                         In this project, I'm aiming to bring back a bit of the memories i've had as a child enjoying this beautiful game.
                     </p><br>
-                    <h2>Fun Naruto Quiz</h2>
+                    <h2 id="nabrd">Fun Naruto Quiz</h2>
+                    <p>Play this simple Naruto quiz to get to know more about the world of the franchise.</p>
+                    <div class="mt-5">
+                      <h3>Question1:</h3><p>Who tricks Naruto into stealing a scroll in the first episode of the series?</p><img src="../img/quizquestion1.webp" class="img-fluid"/>
+                      <div class="mt-2">
+                        <input class="form-check-input" type="radio" id="q1a1" name="answer1" value="q1a1" onclick="question1()">
+                        <label for="q1a1">Iruka</label><br>
+                        <input class="form-check-input" type="radio" id="q1a2" name="answer1" value="q1a2" onclick="question1()">
+                        <label for="q1a2">Mizuki</label><br>
+                        <input class="form-check-input" type="radio" id="q1a3" name="answer1" value="q1a3" onclick="question1()">
+                        <label for="q1a3">Hiruzen</label><br>
+                        <input class="form-check-input" type="radio" id="q1a4" name="answer1" value="q1a4" onclick="question1()">
+                        <label for="q1a4">Mitsuki</label><br>
+                        <div id="q1ca"></div>
+                      </div>
+                      <h3>Question2:</h3><p>What is the name of Zabuza's sword?</p><img src="../img/quizquestion2.webp" class="img-fluid"/>
+                      <div class="mt-2">
+                        <input class="form-check-input" type="radio" id="q2a1" name="answer2" value="q2a1" onclick="question2()">
+                        <label for="q2a1">Haku</label><br>
+                        <input class="form-check-input" type="radio" id="q2a2" name="answer2" value="q2a2" onclick="question2()">
+                        <label for="q2a2">Samehada</label><br>
+                        <input class="form-check-input" type="radio" id="q2a3" name="answer2" value="q2a3" onclick="question2()">
+                        <label for="q2a3">Helmsplitter</label><br>
+                        <input class="form-check-input" type="radio" id="q2a4" name="answer2" value="q2a4" onclick="question2()">
+                        <label for="q2a4">Executioner's Blade</label><br>
+                        <div id="q2ca"></div>
+                      </div>
+                      <h3>Question3:</h3><p>Which team isn't included in the "Rookie 9" classification during the Chunin Exams?</p><img src="../img/quizquestion3.webp" class="img-fluid"/>
+                      <div class="mt-2">
+                        <input class="form-check-input" type="radio" id="q3a1" name="answer3" value="q3a1" onclick="question3()">
+                        <label for="q3a1">Team 7</label><br>
+                        <input class="form-check-input" type="radio" id="q3a2" name="answer3" value="q3a2" onclick="question3()">
+                        <label for="q3a2">Team Guy</label><br>
+                        <input class="form-check-input" type="radio" id="q3a3" name="answer3" value="q3a3" onclick="question3()">
+                        <label for="q3a3">Team 8</label><br>
+                        <input class="form-check-input" type="radio" id="q3a4" name="answer3" value="q3a4" onclick="question3()">
+                        <label for="q3a4">Team 10</label><br>
+                        <div id="q3ca"></div>
+                      </div>
+                      <h3>Question4:</h3><p>Which of Gamabunta's sons does Naruto accidentally summon during his fight against Gaara?</p><img src="../img/quizquestion4.webp" class="img-fluid"/>
+                      <div class="mt-2">
+                        <input class="form-check-input" type="radio" id="q4a1" name="answer4" value="q4a1" onclick="question4()">
+                        <label for="q4a1">Gamakichi</label><br>
+                        <input class="form-check-input" type="radio" id="q4a2" name="answer4" value="q4a2" onclick="question4()">
+                        <label for="q4a2">Gamamoro</label><br>
+                        <input class="form-check-input" type="radio" id="q4a3" name="answer4" value="q4a3" onclick="question4()">
+                        <label for="q4a3">Gamamatsu</label><br>
+                        <input class="form-check-input" type="radio" id="q4a4" name="answer4" value="q4a4" onclick="question4()">
+                        <label for="q4a4">Gamaken</label><br>
+                        <div id="q4ca"></div>
+                      </div>
+                      <h3>Question5:</h3><p>Who are Itachi and Kisame looking for when they first arrive in Konoha together?</p><img src="../img/quizquestion5.webp" class="img-fluid"/>
+                      <div class="mt-2">
+                        <input class="form-check-input" type="radio" id="q5a1" name="answer5" value="q5a1" onclick="question5()">
+                        <label for="q5a1">Kakashi</label><br>
+                        <input class="form-check-input" type="radio" id="q5a2" name="answer5" value="q5a2" onclick="question5()">
+                        <label for="q5a2">Nobody</label><br>
+                        <input class="form-check-input" type="radio" id="q5a3" name="answer5" value="q5a3" onclick="question5()">
+                        <label for="q5a3">Sasuke</label><br>
+                        <input class="form-check-input" type="radio" id="q5a4" name="answer5" value="q5a4" onclick="question5()">
+                        <label for="q5a4">Naruto</label><br>
+                        <div id="q5ca"></div>
+                      </div>
+                      <h3>Question6:</h3><p>Why is Kakashi always late?</p><img src="../img/quizquestion6.webp" class="img-fluid"/>
+                      <div class="mt-2">
+                        <input class="form-check-input" type="radio" id="q6a1" name="answer6" value="q6a1" onclick="question6()">
+                        <label for="q6a1">He gets lost on the path of life</label><br>
+                        <input class="form-check-input" type="radio" id="q6a2" name="answer6" value="q6a2" onclick="question6()">
+                        <label for="q6a2">He visits the Hokage daily</label><br>
+                        <input class="form-check-input" type="radio" id="q6a3" name="answer6" value="q6a3" onclick="question6()">
+                        <label for="q6a3">He visits the Memorital Stone</label><br>
+                        <input class="form-check-input" type="radio" id="q6a4" name="answer6" value="q6a4" onclick="question6()">
+                        <label for="q6a4">He's reading Jiraiya's novels</label><br>
+                        <div id="q6ca"></div>
+                      </div>
+                      <h3>Question7:</h3><p>Who is the youngest Uchiha character to unlock their Mangekyo Sharingan?</p><img src="../img/quizquestion7.webp" class="img-fluid"/>
+                      <div class="mt-2">
+                        <input class="form-check-input" type="radio" id="q7a1" name="answer7" value="q7a1" onclick="question7()">
+                        <label for="q7a1">Sasuke</label><br>
+                        <input class="form-check-input" type="radio" id="q7a2" name="answer7" value="q7a2" onclick="question7()">
+                        <label for="q7a2">Madara</label><br>
+                        <input class="form-check-input" type="radio" id="q7a3" name="answer7" value="q7a3" onclick="question7()">
+                        <label for="q7a3">Shisui</label><br>
+                        <input class="form-check-input" type="radio" id="q7a4" name="answer7" value="q7a4" onclick="question7()">
+                        <label for="q7a4">Itachi</label><br>
+                        <div id="q7ca"></div>
+                      </div>
+                      <h3>Question8:</h3><p>Which members of the Sound Village go to Konoha to bring Sasuke to Orochimaru?</p><img src="../img/quizquestion8.webp" class="img-fluid"/>
+                      <div class="mt-2">
+                        <input class="form-check-input" type="radio" id="q8a1" name="answer8" value="q8a1" onclick="question8()">
+                        <label for="q8a1">Jirobo, Kidomaru, Kimimaro, Ukon</label><br>
+                        <input class="form-check-input" type="radio" id="q8a2" name="answer8" value="q8a2" onclick="question8()">
+                        <label for="q8a2">Jirobo, Kidomaru, Kabuto, Sakon</label><br>
+                        <input class="form-check-input" type="radio" id="q8a3" name="answer8" value="q8a3" onclick="question8()">
+                        <label for="q8a3">Kidomaru, Tayuya, Sakon, Ukon</label><br>
+                        <input class="form-check-input" type="radio" id="q8a4" name="answer8" value="q8a4" onclick="question8()">
+                        <label for="q8a4">Jirobo, Kidomaru, Tayuya, Sakon, Ukon</label><br>
+                        <div id="q8ca"></div>
+                      </div>
+                      <h3>Question9:</h3><p>Which former Kage was also the Jinchuriki of the Three Tails?</p><img src="../img/quizquestion9.webp" class="img-fluid"/>
+                      <div class="mt-2">
+                        <input class="form-check-input" type="radio" id="q9a1" name="answer9" value="q9a1" onclick="question9()">
+                        <label for="q9a1">The Fourth Mizukage</label><br>
+                        <input class="form-check-input" type="radio" id="q9a2" name="answer9" value="q9a2" onclick="question9()">
+                        <label for="q9a2">The First Raikage</label><br>
+                        <input class="form-check-input" type="radio" id="q9a3" name="answer9" value="q9a3" onclick="question9()">
+                        <label for="q9a3">The Fifth Kazekage</label><br>
+                        <input class="form-check-input" type="radio" id="q9a4" name="answer9" value="q9a4" onclick="question9()">
+                        <label for="q9a4">The Second Tsuchikage</label><br>
+                        <div id="q9ca"></div>
+                      </div>
+                      <h3>Question10:</h3><p>Which of the Eight Gates does Rock Lee stop at against Gaara in the Chunin Exams?</p><img src="../img/quizquestion10.webp" class="img-fluid"/>
+                      <div class="mt-2">
+                        <input class="form-check-input" type="radio" id="q10a1" name="answer10" value="q10a1" onclick="question10()">
+                        <label for="q10a1">5th Gate: The Gate of Closing</label><br>
+                        <input class="form-check-input" type="radio" id="q10a2" name="answer10" value="q10a2" onclick="question10()">
+                        <label for="q10a2">4th Gate: The Gate of Pain</label><br>
+                        <input class="form-check-input" type="radio" id="q10a3" name="answer10" value="q10a3" onclick="question10()">
+                        <label for="q10a3">6th Gate: The Gate of Joy</label><br>
+                        <input class="form-check-input" type="radio" id="q10a4" name="answer10" value="q10a4" onclick="question10()">
+                        <label for="q10a4">3rd Gate: The Gate of Life</label><br>
+                        <div id="q10ca"></div>
+                      </div>
+                    </div>
+                    <div class="d-grid gap-2 mt-3">
+                      <button type="button" class="btn btn-danger btn-block" onclick="QuizResult()">Show Result</button>
+                      </div>  
+                    <div class="mt-2" id="score"></div>
                 </div>
                 <div class="col-md-2 p-3" id="sidediv">
                     <p class="fs-6"><strong id="nabrd">First time playing?</strong><br>
                         <strong>Note:</strong> If this is your first time playing, be sure to check out the
-                        <strong><a href="#" id="nabrd" class="text-decoration-none">The Basics</a></strong><br>
+                        <strong><a href="#" id="nabrd" class="text-decoration-none">GAME MANUAL</a></strong>
                         before you start battling.
                     </p>
                     <div class="mb-2">
