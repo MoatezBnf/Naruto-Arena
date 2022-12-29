@@ -161,17 +161,19 @@ function QuizResult(){
         });
         if ($(':radio:checked').length != count) {
             alert("You must answer all the quiz questions!");
-            score="You must answer all the quiz questions! Score:"
         }else if (i==0){
             score="Unfortunately, You haven't got any correct answer. I advise you to rewatch the Show!<br> Score:"
+            document.getElementById("score").innerHTML=(`${score} ${i} ${"/10"}`);
         }else if (i<=5 && i>0){
             score="Not Bad! You're an average Naruto Fan.<br> Score:"
+            document.getElementById("score").innerHTML=(`${score} ${i} ${"/10"}`);
         }else if (i<=9 && i>5){
             score="Awesome! You are amongst the best fans of the franchise.<br> Score:"
+            document.getElementById("score").innerHTML=(`${score} ${i} ${"/10"}`);
         }else if (i==10){
             score="Excellent! You are literally a Naruto God, You'll probably do so good in game <3<br> Score:"
+            document.getElementById("score").innerHTML=(`${score} ${i} ${"/10"}`);
         }
-    document.getElementById("score").innerHTML=(`${score} ${i} ${"/10"}`);
 }
 
 

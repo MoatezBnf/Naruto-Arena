@@ -56,7 +56,7 @@
                     <p class="fs-6 ms-2">Visit the <strong><a href="https://naruto-boards.net/" id="nabrd" class="text-decoration-none">Naruto Boards</a></strong><br>
                         The Official NARUTOARENA Forums.
                     </p>
-                    <button type="button" class="btn btn-danger ms-2 mb-2" data-bs-toggle="modal" data-bs-target="#loginmodal">Sign in</button>
+                    <button type="button" class="btn btn-danger ms-2 mb-2" id="nabtn" data-bs-toggle="modal" data-bs-target="#loginmodal">Sign in</button>
                     <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="loginmodalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-md">
                           <div class="modal-content">
@@ -95,7 +95,7 @@
                                   
                                     <!-- Submit button -->
                                     <div class="d-grid gap-2">
-                                    <button type="button" class="btn btn-danger btn-block" onclick="SignInControl()">Sign in</button>
+                                    <button type="button" class="btn btn-danger btn-block" id="nabtn" onclick="SignInControl()">Sign in</button>
                                     </div>
                                     <div class="text-center form-check-label mt-2">
                                         <p>Not a member?<a href="#registermodal" class="text-decoration-none ms-2" id="nabrd" data-bs-toggle="modal" data-bs-target="#registermodal" data-bs-dismiss="modal">Register</a></p>
@@ -106,7 +106,7 @@
                         </div>
                       </div><br>
                       <strong class="fs-6 mb-2 ms-2" id="nabrd">New around here?</strong><br>
-                      <button type="button" class="btn btn-danger ms-2 mb-2 mt-2" data-bs-toggle="modal" data-bs-target="#registermodal">Create Account</button>
+                      <button type="button" class="btn btn-danger ms-2 mb-2 mt-2" id="nabtn" data-bs-toggle="modal" data-bs-target="#registermodal">Create Account</button>
                       <div class="modal fade" id="registermodal" tabindex="-1" aria-labelledby="registermodalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                           <div class="modal-content">
@@ -150,7 +150,7 @@
                                   </div>
                                    <!-- Submit button -->
                                    <div class="d-grid gap-2 mt-3">
-                                    <button type="button" class="btn btn-danger btn-block" onclick="RegisterControl()">Register</button>
+                                    <button type="button" class="btn btn-danger btn-block" id="nabtn" onclick="RegisterControl()">Register</button>
                                     </div>                  
                                     <div class="text-center form-check-label mt-2">
                                       <p>Already a member?<a href="#loginmodal" class="text-decoration-none ms-2" id="nabrd" data-bs-toggle="modal" data-bs-target="#loginmodal" data-bs-dismiss="modal">Log in</a></p>
@@ -175,7 +175,7 @@
                                     </div>                               
                                     <!-- Submit button -->
                                     <div class="d-grid gap-2">
-                                      <button type="button" class="btn btn-danger btn-block" onclick="ResetPass()">Reset password</button>
+                                      <button type="button" class="btn btn-danger btn-block" id="nabtn" onclick="ResetPass()">Reset password</button>
                                     </div>
                                     <div class="text-center form-check-label mt-2">
                                       <a href="#loginmodal" class="text-decoration-none ms-2" id="nabrd" data-bs-toggle="modal" data-bs-target="#loginmodal" data-bs-dismiss="modal">Log in</a>
@@ -322,7 +322,7 @@
                       </div>
                     </div>
                     <div class="d-grid gap-2 mt-3">
-                      <button type="button" class="btn btn-danger btn-block" onclick="QuizResult()">Show Result</button>
+                      <button type="button" class="btn btn-danger btn-block" id="nabtn" onclick="QuizResult()">Show Result</button>
                       </div>  
                     <div class="mt-2" id="score"></div>
                 </div>
