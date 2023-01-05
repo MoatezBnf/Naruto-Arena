@@ -24,16 +24,13 @@
                     <a class="nav-link active" href="startpage.html">STARTPAGE</a>                  
                   </li>
                   <li class="nav-item pe-3">
-                    <a class="nav-link active" href="#">START PLAYING</a>                  
+                    <a class="nav-link active" href="startplaying.html">START PLAYING</a>                  
                   </li>
                   <li class="nav-item pe-3">
-                    <a class="nav-link active" href="#">GAME MANUAL</a>
+                    <a class="nav-link active" href="gamemanual.html">GAME MANUAL</a>
                   </li>
                   <li class="nav-item pe-3">
-                    <a class="nav-link active" href="#">LADDERS</a>
-                  </li>
-                  <li class="nav-item pe-3">
-                    <a class="nav-link active" href="#">MISSIONS</a>
+                    <a class="nav-link active" href="missions.html">MISSIONS</a>
                   </li>
                 </ul>
               </div>
@@ -199,7 +196,10 @@
                     </p><br>
                     <h2 id="nabrd">Fun Naruto Quiz</h2>
                     <p>Play this simple Naruto quiz to get to know more about the world of the franchise.</p>
-                    <div class="mt-5">
+                    <div class="d-grid gap-2 mt-3">
+                      <button type="button" class="btn btn-danger btn-block" id="quizstart" onclick="QuizStart()">Start Quiz</button>
+                      </div>
+                    <div class="mt-5" id="hidden-div" style="display: none;">
                       <h3>Question1:</h3><p>Who tricks Naruto into stealing a scroll in the first episode of the series?</p><img src="../img/quizquestion1.webp" class="img-fluid"/>
                       <div class="mt-2">
                         <input class="form-check-input" type="radio" id="q1a1" name="answer1" value="q1a1" onclick="question1()">
@@ -320,10 +320,10 @@
                         <label for="q10a4">3rd Gate: The Gate of Life</label><br>
                         <div id="q10ca"></div>
                       </div>
-                    </div>
-                    <div class="d-grid gap-2 mt-3">
-                      <button type="button" class="btn btn-danger btn-block" id="nabtn" onclick="QuizResult()">Show Result</button>
-                      </div>  
+                      <div class="d-grid gap-2 mt-3">
+                        <button type="button" class="btn btn-danger btn-block" id="nabtn" onclick="QuizResult()">Show Result</button>
+                        </div> 
+                    </div> 
                     <div class="mt-2" id="score"></div>
                 </div>
                 <div class="col-md-2 p-3" id="sidediv">
@@ -380,6 +380,9 @@
                 </div>
               </div>
           </div>
+          <footer class="mx-auto w-auto p-10 rounded-sm  text-center font-footer absolute inset-x-0 top-10 z-10 bg-hallo-nav dark:bg-dark-nav shadow-md bg-opacity-80 dark:bg-opacity-80">
+            Naruto-Arena.net is a turn-based, tactical online multiplayer game played in the browser.<br/>NARUTOARENA &copy; 2022-2023 MOATEZ. All rights reserved.                   
+          </footer>
         <!--JQUERY-->
         <script src="../js/jquery.js"></script>  
         <!--JS-->

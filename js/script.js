@@ -28,6 +28,10 @@ $(":radio").click(function(){
     var radioName = $(this).attr("name"); //Get radio name
     $(":radio[name='"+radioName+"']").attr("disabled", true); //Disable all with the same name
  });
+ function QuizStart(){
+    document.getElementById("hidden-div").style.display = 'block';
+    document.getElementById("quizstart").style.display = 'none';
+ }
  var i=0;
 function question1(){
     let answer;

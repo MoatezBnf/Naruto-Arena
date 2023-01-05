@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--META-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>NARUTO ARENA - Your turn-based, tactical online multiplayer game played in the browser.</title>
+        <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+        <!--BS5-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!--CSS-->
+        <link rel="stylesheet" href="../css/style.css"/>
+        <script src="https://kit.fontawesome.com/18097ef2c8.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto font-monospace fw-bold lh-base">
+                  <li class="nav-item pe-3">
+                    <a class="nav-link active" href="startpage.html">STARTPAGE</a>                  
+                  </li>
+                  <li class="nav-item pe-3">
+                    <a class="nav-link active" href="startplaying.html">START PLAYING</a>                  
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="thebasics.html" role="button" data-bs-toggle="dropdown">The Basics</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item font-monospace fw-bold lh-base" href="gamemanual.html">GAME MANUAL</a></li>
+                      <li><a class="dropdown-item font-monospace fw-bold lh-base" href="charactersandskills.html">Characters and Skills</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item pe-3">
+                    <a class="nav-link active" href="missions.html">MISSIONS</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="container-fluid">
+            <div class="row">
+                <img src="../img/naruto-arena-background.png" class="img-fluid rounded mx-auto d-block" style="height: 238px; width: 776px;">
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-md-2" id="sidediv">
+                    <a href="https://www.patreon.com/join/wespro" class="text-decoration-none">
+                        <div class="md-auto m-2" id="ptrn">
+                            &nbsp;<i class="fa-brands fa-patreon"></i>&nbsp;support our project.
+                        </div>
+                    </a>
+                    <a href="https://discord.com/invite/yEFaw6f" class="text-decoration-none">
+                            <img src="../img/discord.png" class="img-fluid md-auto m-2" id="discord">
+                    </a>
+                    <p class="fs-6 ms-2">Visit the <strong><a href="https://naruto-boards.net/" id="nabrd" class="text-decoration-none">Naruto Boards</a></strong><br>
+                        The Official NARUTOARENA Forums.
+                    </p>
+                    <button type="button" class="btn btn-danger ms-2 mb-2" id="nabtn" data-bs-toggle="modal" data-bs-target="#loginmodal">Sign in</button>
+                    <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="loginmodalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <!-- Email input -->
+                                    <div class="form-outline mb-4">
+                                      <input type="email" id="email" class="form-control" placeholder="Email address"/>
+                                      <label class="form-label" for="email"></label>
+                                    </div>
+                                  
+                                    <!-- Password input -->
+                                    <div class="form-outline mb-4">
+                                      <input type="password" id="password" class="form-control" placeholder="Password"/>
+                                      <label class="form-label" for="password"></label>
+                                    </div>
+                                  
+                                    <!-- 2 column grid layout for inline styling -->
+                                    <div class="row mb-4">
+                                      <div class="col d-flex justify-content-center">
+                                        <!-- Checkbox -->
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked/>
+                                          <label class="form-check-label" for="loginCheck">Remember me</label>
+                                        </div>
+                                      </div>
+                                  
+                                      <div class="col-sm-6">
+                                        <!-- Simple link -->
+                                        <a href="#resetmodal" class="text-decoration-none ms-2" id="nabrd" data-bs-toggle="modal" data-bs-target="#resetmodal" data-bs-dismiss="modal">Forgot password?</a>
+                                      </div>
+                                    </div>
+                                  
+                                    <!-- Submit button -->
+                                    <div class="d-grid gap-2">
+                                    <button type="button" class="btn btn-danger btn-block" id="nabtn" onclick="SignInControl()">Sign in</button>
+                                    </div>
+                                    <div class="text-center form-check-label mt-2">
+                                        <p>Not a member?<a href="#registermodal" class="text-decoration-none ms-2" id="nabrd" data-bs-toggle="modal" data-bs-target="#registermodal" data-bs-dismiss="modal">Register</a></p>
+                                      </div>
+                                  </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div><br>
+                      <strong class="fs-6 mb-2 ms-2" id="nabrd">New around here?</strong><br>
+                      <button type="button" class="btn btn-danger ms-2 mb-2 mt-2" id="nabtn" data-bs-toggle="modal" data-bs-target="#registermodal">Create Account</button>
+                      <div class="modal fade" id="registermodal" tabindex="-1" aria-labelledby="registermodalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                   <!-- Name input -->
+                                   <div class="form-outline">
+                                    <input type="text" id="registerName" class="form-control" placeholder="Name"/>
+                                    <label class="form-label" for="registerName"></label>
+                                  </div>
+                                  <!-- Username input -->
+                                  <div class="form-outline">
+                                    <input type="text" id="registerUsername" class="form-control" placeholder="Username"/>
+                                    <label class="form-label" for="registerUsername"></label>
+                                  </div>
+                                  <!-- Email input -->
+                                  <div class="form-outline">
+                                    <input type="email" id="registerEmail" class="form-control" placeholder="Email"/>
+                                    <label class="form-label" for="registerEmail"></label>
+                                  </div>
+                                  <!-- Password input -->
+                                  <div class="form-outline">
+                                    <input type="password" id="registerPassword" class="form-control" placeholder="Password"/>
+                                    <label class="form-label" for="registerPassword"></label>
+                                  </div>
+                                  <!-- Repeat Password input -->
+                                  <div class="form-outline">
+                                    <input type="password" id="registerRepeatPassword" class="form-control" placeholder="Repeat password"/>
+                                    <label class="form-label" for="registerRepeatPassword"></label>
+                                  </div>
+                                  <!-- Checkbox -->
+                                  <div class="form-check d-flex justify-content-center mb-1">
+                                    <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
+                                      aria-describedby="registerCheckHelpText"/>
+                                    <label class="form-check-label" for="registerCheck">
+                                      I have read and agree to the terms
+                                    </label>
+                                  </div>
+                                   <!-- Submit button -->
+                                   <div class="d-grid gap-2 mt-3">
+                                    <button type="button" class="btn btn-danger btn-block" id="nabtn" onclick="RegisterControl()">Register</button>
+                                    </div>                  
+                                    <div class="text-center form-check-label mt-2">
+                                      <p>Already a member?<a href="#loginmodal" class="text-decoration-none ms-2" id="nabrd" data-bs-toggle="modal" data-bs-target="#loginmodal" data-bs-dismiss="modal">Log in</a></p>
+                                    </div>        
+                                </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal fade" id="resetmodal" tabindex="-1" aria-labelledby="resetmodalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <!-- Email input -->
+                                    <div class="form-outline mb-2">
+                                      <input type="email" id="resetemail" class="form-control" placeholder="Email address"/>
+                                      <label class="form-label" for="email"></label>
+                                    </div>                               
+                                    <!-- Submit button -->
+                                    <div class="d-grid gap-2">
+                                      <button type="button" class="btn btn-danger btn-block" id="nabtn" onclick="ResetPass()">Reset password</button>
+                                    </div>
+                                    <div class="text-center form-check-label mt-2">
+                                      <a href="#loginmodal" class="text-decoration-none ms-2" id="nabrd" data-bs-toggle="modal" data-bs-target="#loginmodal" data-bs-dismiss="modal">Log in</a>
+                                      </div>
+                                  </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <h6 class="mt-3">Gameplay tutroial:</h6>
+                        <iframe width="200" height="145" src="https://www.youtube.com/embed/KjOF5spSKjY" title="YouTube video player" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      </div>
+                </div>
+                <div class="col-md-7 p-3" id="main">
+                    <p>This section of the game manual is a basic overview of the user interface, gameplay, and standard terminology within the game.<br>
+                        NARUTOARENA is a turn based strategy game where your team of three ninjas is pitted against another player's team of three ninjas with the goal of reducing your opposition to 0 health points and winning the match.
+                    </p>  
+                    <div class="mt-8 mb-4"><span id="nabrd">&gt;&gt; Selection Screen</span></div>
+                    <div class="flex mb-4"><img src="../img/basics1.png" class="img-fluid border w-[500px] mx-auto"></div>
+                    <p> The first thing you will see when beginning a game of NARUTOARENA is the screen above (without the big blue letters). 
+                        This is the Character Selection screen and what ever is and does is explained below.
+                    </p>
+                    <ul class="mt-4">
+                    <li id="sidediv" class="mb-1"><b id="nabrd">A:</b> This section displays your player information. It shows your avatar, username, ninja rank, ladder level and experience, ladder rank, win-loss record, and win-loss streak, all in that order. </li>
+                    <li id="sidediv" class="mb-1"><b id="nabrd">B:</b> This section has three boxes for you to drag and drop the ninjas you wish to use in your team. Only when you have selected three ninjas may you begin a match.</li>
+                    <li id="sidediv" class="mb-1"><b id="nabrd">C:</b> This is the character section. Each page has 21 characters on it and you use the white arrows to scroll through the pages. Some characters may appear grayed-out and you will not be able to drag these characters into your team. These characters are mission characters and you must complete their mission before you may use them. </li>
+                    <li id="sidediv" class="mb-1"><b id="nabrd">D:</b> This is where individual character information is displayed. By clicking on a character's icon in section 'C' this section will appear. The primary function of this section is so that you may study that character's skills. </li>
+                    <li id="sidediv" class="mb-1"><b id="nabrd">E:</b> By clicking on a skill icon of a character in section 'D' this section will display the information about that skill. The upper left red text is the name of the skill. The upper right is the energy cost of the skill. The center is the description of the skill, essential saying what the skill does. The bottom left lists the classes of that skill. The bottom right displays that skill's cooldown. </li>
+                    <li id="sidediv" class="mb-1"><b id="nabrd">F:</b> The three buttons at the middle will begin a match with another opponent. There are three different types of games you may play. A ladder game is played against a random opponent near you on the ladder. This game type is the only way to increase your standing within the ladder. A quick game is played against a random opponent. This game does not count towards your ladder stats but does towards your missions. A private game works just like a quick game except that you must specify the particular opponent you wish to play against and your opponent must do the same. </li>
+                    </ul>
+                    <div class="mt-8 mb-4"><span id="nabrd">&gt;&gt; In-Game Screen</span></div>
+                    <div class="flex mb-4"><img src="../img/basics2.png" class="img-fluid border w-[500px] mx-auto"></div>
+                    <p> Next will be the in-game UI (again, the yellow letters do not exist on the real UI) and the basics of how to play. </p>
+                    <ul class="mt-4">
+                    <li id="sidediv" class="mb-1"><b id="nabrd">A:</b> This section displays you and your opponent's avatars, the 'press when ready' button which is how you end your turn (this will say 'opponent's turn' when it is not your turn), a red and white bar which is your turn timer, and your energy pool. There are four types of energy in NARUTOARENA, Taijutsu (green), Bloodline (red), Ninjutsu (blue), and Genjutsu (white). The 'T' is your current total energy in your pool. With the exception of the first player to take a turn (they only receive one energy) you will receive a number of random energy equal to how many of your ninjas were alive at the end of your last turn. </li>
+                    <li id="sidediv" class="mb-1"><b id="nabrd">B:</b> This section displays your team and the current health of each ninja in it. Skills affecting these characters will also be shown here by small icons next to the character's icon. By scrolling your curser over that icon a description of what the skill is doing will appear. </li>
+                    <li id="sidediv" class="mb-1"><b id="nabrd">C:</b> This section displays your opponent's team and functions just like section 'B'. </li>
+                    <li id="sidediv" class="mb-1"><b id="nabrd">D:</b> This is where your characters' skills are displayed. Each character can use one skill per turn, provided you have sufficient energy of the appropriate types to pay their costs. Any skill that cannot be used that turn for any reason is grayed-out. By clicking on a skill, viable targets for that skill with glow yellow and you must then click on one of these viable targets for that skill to be used. When a skill has been selected for a character that turn, its icon will display in the gray '?' box. To deselect a skill simply double click its icon in the gray '?' box. </li>
+                    <li id="sidediv" class="mb-1"><b id="nabrd">E:</b> This section is exactly like section 'E' of the Character Selection screen. </li>
+                    <li id="sidediv" class="mb-1"><b id="nabrd">F:</b> This section is where you can chooses to surrender a match, open a chat window with your opponent, or adjust the sound settings. </li>
+                    </ul>
+                    <div class="mt-8 mb-4"> <span id="nabrd">&gt;&gt; Energy Types</span></div>
+                    <p> As mentioned above energy is used to perform skills. Every skill uses a different set of energy. There are 4 types of energy: </p>
+                    <div class="flex mt-1">  <img class="border mr-1" style="width: 12px; height: 12px;" src="../img/bloodline.gif"> Bloodline</div>
+                    <div class="flex mt-1"><img class="border mr-1" style="width: 12px; height: 12px;" src="../img/ninjutsu.gif"> Ninjutsu</div>
+                    <div class="flex mt-1"><img class="border mr-1" style="width: 12px; height: 12px;" src="../img/taijutsu.gif"> Taijutsu</div>
+                    <div class="flex mt-1"><img class="border mr-1" style="width: 12px; height: 12px;" src="../img/genjutsu.gif"> Genjutsu </div>
+                    <p class="mt-2"> The chance to get a certain energy is 25% for each, as there are four types. This means that it is random, and that you can also get multiple energys of one type. Next to these 4 types, some skills require random energy.</p>
+                    <div class="flex mt-2"><img class="border mr-1" style="width: 12px; height: 12px;" src="../img/random.gif"> Random, this kind of energy can be filled in by any of the types above.</div>
+                    <div class="mt-3 mb-4"> <span id="nabrd">&gt;&gt; End of Your Turn </span></div>
+                    <p> Once you have decided what skills your team will use and on whom it is time to end your turn. Do this by clicking on the 'Press When Ready' button in section 'A'. This will bring you to the Skill Queue. </p>
+                    <div class="flex mb-4 mt-4"><img src="../img/basics3.png" class="img-fluid"></div>
+                    <p> This is where you will spend specific energy as random energy by clicking the up or down buttons next to each type. It is also where you can decide the order your skills will happen in. Skills occur in order from left to right and they may be repositioned in the queue by dragging and dropping the icons. After spending any necessary random energy costs and ordering your skills press the O.K. button to complete your turn (note that this is still part of your turn and your turn timer will continue to run down while in this screen). If you want to reconsider or change something you chose to do press the Cancel button to exit this screen. <b> If you run out of time before completing your turn, your characters will not use any skills that turn. </b></p>
+                </div>
+                <footer class="mx-auto w-auto p-10 rounded-sm  text-center font-footer absolute inset-x-0 top-10 z-10 bg-hallo-nav dark:bg-dark-nav shadow-md bg-opacity-80 dark:bg-opacity-80">
+                  Naruto-Arena.net is a turn-based, tactical online multiplayer game played in the browser.<br/>NARUTOARENA &copy; 2018-2021 WESPRO. All rights reserved.                   
+                </footer>
+        <!--JQUERY-->
+        <script src="../js/jquery.js"></script>  
+        <!--JS-->
+        <script src="../js/script.js"></script>
+        <!--BS5-->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--META-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>NARUTO ARENA - Your turn-based, tactical online multiplayer game played in the browser.</title>
+        <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+        <!--BS5-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!--CSS-->
+        <link rel="stylesheet" href="../css/style.css"/>
+        <script src="https://kit.fontawesome.com/18097ef2c8.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto font-monospace fw-bold lh-base">
+                  <li class="nav-item pe-3">
+                    <a class="nav-link active" href="startpage.html">STARTPAGE</a>                  
+                  </li>
+                  <li class="nav-item pe-3">
+                    <a class="nav-link active" href="startplaying.html">START PLAYING</a>                  
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="charactersandskills.html" role="button" data-bs-toggle="dropdown">Characters and Skills</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item font-monospace fw-bold lh-base" href="thebasics.html">The Basics</a></li>
+                      <li><a class="dropdown-item font-monospace fw-bold lh-base" href="gamemanual.html">GAME MANUAL</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item pe-3">
+                    <a class="nav-link active" href="missions.html">MISSIONS</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="container-fluid">
+            <div class="row">
+                <img src="../img/naruto-arena-background.png" class="img-fluid rounded mx-auto d-block" style="height: 238px; width: 776px;">
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-md-2" id="sidediv">
+                    <a href="https://www.patreon.com/join/wespro" class="text-decoration-none">
+                        <div class="md-auto m-2" id="ptrn">
+                            &nbsp;<i class="fa-brands fa-patreon"></i>&nbsp;support our project.
+                        </div>
+                    </a>
+                    <a href="https://discord.com/invite/yEFaw6f" class="text-decoration-none">
+                            <img src="../img/discord.png" class="img-fluid md-auto m-2" id="discord">
+                    </a>
+                    <p class="fs-6 ms-2">Visit the <strong><a href="https://naruto-boards.net/" id="nabrd" class="text-decoration-none">Naruto Boards</a></strong><br>
+                        The Official NARUTOARENA Forums.
+                    </p>
+                    <button type="button" class="btn btn-danger ms-2 mb-2" id="nabtn" data-bs-toggle="modal" data-bs-target="#loginmodal">Sign in</button>
+                    <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="loginmodalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <!-- Email input -->
+                                    <div class="form-outline mb-4">
+                                      <input type="email" id="email" class="form-control" placeholder="Email address"/>
+                                      <label class="form-label" for="email"></label>
+                                    </div>
+                                  
+                                    <!-- Password input -->
+                                    <div class="form-outline mb-4">
+                                      <input type="password" id="password" class="form-control" placeholder="Password"/>
+                                      <label class="form-label" for="password"></label>
+                                    </div>
+                                  
+                                    <!-- 2 column grid layout for inline styling -->
+                                    <div class="row mb-4">
+                                      <div class="col d-flex justify-content-center">
+                                        <!-- Checkbox -->
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked/>
+                                          <label class="form-check-label" for="loginCheck">Remember me</label>
+                                        </div>
+                                      </div>
+                                  
+                                      <div class="col-sm-6">
+                                        <!-- Simple link -->
+                                        <a href="#resetmodal" class="text-decoration-none ms-2" id="nabrd" data-bs-toggle="modal" data-bs-target="#resetmodal" data-bs-dismiss="modal">Forgot password?</a>
+                                      </div>
+                                    </div>
+                                  
+                                    <!-- Submit button -->
+                                    <div class="d-grid gap-2">
+                                    <button type="button" class="btn btn-danger btn-block" id="nabtn" onclick="SignInControl()">Sign in</button>
+                                    </div>
+                                    <div class="text-center form-check-label mt-2">
+                                        <p>Not a member?<a href="#registermodal" class="text-decoration-none ms-2" id="nabrd" data-bs-toggle="modal" data-bs-target="#registermodal" data-bs-dismiss="modal">Register</a></p>
+                                      </div>
+                                  </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div><br>
+                      <strong class="fs-6 mb-2 ms-2" id="nabrd">New around here?</strong><br>
+                      <button type="button" class="btn btn-danger ms-2 mb-2 mt-2" id="nabtn" data-bs-toggle="modal" data-bs-target="#registermodal">Create Account</button>
+                      <div class="modal fade" id="registermodal" tabindex="-1" aria-labelledby="registermodalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                   <!-- Name input -->
+                                   <div class="form-outline">
+                                    <input type="text" id="registerName" class="form-control" placeholder="Name"/>
+                                    <label class="form-label" for="registerName"></label>
+                                  </div>
+                                  <!-- Username input -->
+                                  <div class="form-outline">
+                                    <input type="text" id="registerUsername" class="form-control" placeholder="Username"/>
+                                    <label class="form-label" for="registerUsername"></label>
+                                  </div>
+                                  <!-- Email input -->
+                                  <div class="form-outline">
+                                    <input type="email" id="registerEmail" class="form-control" placeholder="Email"/>
+                                    <label class="form-label" for="registerEmail"></label>
+                                  </div>
+                                  <!-- Password input -->
+                                  <div class="form-outline">
+                                    <input type="password" id="registerPassword" class="form-control" placeholder="Password"/>
+                                    <label class="form-label" for="registerPassword"></label>
+                                  </div>
+                                  <!-- Repeat Password input -->
+                                  <div class="form-outline">
+                                    <input type="password" id="registerRepeatPassword" class="form-control" placeholder="Repeat password"/>
+                                    <label class="form-label" for="registerRepeatPassword"></label>
+                                  </div>
+                                  <!-- Checkbox -->
+                                  <div class="form-check d-flex justify-content-center mb-1">
+                                    <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
+                                      aria-describedby="registerCheckHelpText"/>
+                                    <label class="form-check-label" for="registerCheck">
+                                      I have read and agree to the terms
+                                    </label>
+                                  </div>
+                                   <!-- Submit button -->
+                                   <div class="d-grid gap-2 mt-3">
+                                    <button type="button" class="btn btn-danger btn-block" id="nabtn" onclick="RegisterControl()">Register</button>
+                                    </div>                  
+                                    <div class="text-center form-check-label mt-2">
+                                      <p>Already a member?<a href="#loginmodal" class="text-decoration-none ms-2" id="nabrd" data-bs-toggle="modal" data-bs-target="#loginmodal" data-bs-dismiss="modal">Log in</a></p>
+                                    </div>        
+                                </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal fade" id="resetmodal" tabindex="-1" aria-labelledby="resetmodalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <!-- Email input -->
+                                    <div class="form-outline mb-2">
+                                      <input type="email" id="resetemail" class="form-control" placeholder="Email address"/>
+                                      <label class="form-label" for="email"></label>
+                                    </div>                               
+                                    <!-- Submit button -->
+                                    <div class="d-grid gap-2">
+                                      <button type="button" class="btn btn-danger btn-block" id="nabtn" onclick="ResetPass()">Reset password</button>
+                                    </div>
+                                    <div class="text-center form-check-label mt-2">
+                                      <a href="#loginmodal" class="text-decoration-none ms-2" id="nabrd" data-bs-toggle="modal" data-bs-target="#loginmodal" data-bs-dismiss="modal">Log in</a>
+                                      </div>
+                                  </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <h6 class="mt-3">Gameplay tutroial:</h6>
+                        <iframe width="200" height="145" src="https://www.youtube.com/embed/KjOF5spSKjY" title="YouTube video player" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      </div>
+                </div>
+                <div class="col-md-7 p-3" id="main">
+                  <p>NARUTOARENA forces you to select 3 characters when you start a new game. This page gives you an overview of all characters available in the NARUTOARENA game. Not only can you view each character's skills, you can also discuss the characters by posting comments.</p>     
+                  <div id="sidediv" class="mt-3">
+                    <span id="nabrd" class="fw-bold">Uzumaki Naruto</span>
+                    <div class="d-flex align-items-center">
+                      <img src="../img/naruto.png" class="img-fluid mb-3 me-2" style="width: 60px; height: 60px;">
+                      <div class="mb-3">A Genin from Team 7, Naruto is an orphan with the goal to one day become Hokage. Using his signature move, Shadow Clones, Naruto is able to perform powerful moves such as the Uzumaki Naruto Combo and the Rasengan.</div>
+                    </div>
+                  </div>
+                  <div id="sidediv" class="mt-3">
+                    <span id="nabrd" class="fw-bold">Uchiha Sasuke</span>
+                    <div class="d-flex align-items-center">
+                      <img src="../img/sasuke.png" class="img-fluid mb-3 me-2" style="width: 60px; height: 60px;">
+                      <div class="mb-3">A Genin from Team 7, Sasuke is the lone survivor of the Uchiha clan and has sworn vengeance against his brother. Using his sharingan, Sasuke is able to anticipate incoming attacks and is capable of advanced offensive moves.</div>
+                    </div>
+                  </div>
+                  <div id="sidediv" class="mt-3">
+                    <span id="nabrd" class="fw-bold">Haruno Sakura</span>
+                    <div class="d-flex align-items-center">
+                      <img src="../img/sakura.png" class="img-fluid mb-3 me-2" style="width: 60px; height: 60px;">
+                      <div class="mb-3">A Genin from Team 7, Sakura is very intelligent, but self-conscious about herself. Having just recently received training from Tsunade, Sakura is now able to deliver powerful punches and heal her own allies.</div>
+                    </div>
+                  </div>
+                  <div id="sidediv" class="mt-3">
+                    <span id="nabrd" class="fw-bold">Inuzuka Kiba</span>
+                    <div class="d-flex align-items-center">
+                      <img src="../img/kiba.png" class="img-fluid mb-3 me-2" style="width: 60px; height: 60px;">
+                      <div class="mb-3">A Genin from Team 8, Kiba is a member of the Inuzuka clan, and is both short-tempered and impulsive. Using his dog, Akamaru, Kiba is capable of powerful taijutsu or fusing with Akamaru to become a deadly double headed dog.  </div>
+                    </div>
+                  </div>
+                  <div id="sidediv" class="mt-3">
+                    <span id="nabrd" class="fw-bold">Aburame Shino</span>
+                    <div class="d-flex align-items-center">
+                      <img src="../img/shino.png" class="img-fluid mb-3 me-2" style="width: 60px; height: 60px;">
+                      <div class="mb-3">A Genin from Team 8, Shino is the successor of the Aburame clan, and a very reserved and tactical fighter. Using the bugs that live inside his body, Shino is able to leech the chakra off his enemies, or protect his entire team.</div>
+                    </div>
+                  </div>
+                  <div id="sidediv" class="mt-3">
+                    <span id="nabrd" class="fw-bold">Hyuuga Hinata</span>
+                    <div class="d-flex align-items-center">
+                      <img src="../img/hinata.png" class="img-fluid mb-3 me-2" style="width: 60px; height: 60px;">
+                      <div class="mb-3">A Genin from Team 8, Hinata is the next in line in the Hyuuga clan, but she is shy and very withdrawn. Using the trademark Byakugan of the Hyuuga, Hinata is able to delicately target an enemy's Chakra Points while defending the team.</div>
+                    </div>
+                  </div>
+                  <div id="sidediv" class="mt-3">
+                    <span id="nabrd" class="fw-bold">Nara Shikamaru</span>
+                    <div class="d-flex align-items-center">
+                      <img src="../img/shikamaru.png" class="img-fluid mb-3 me-2" style="width: 60px; height: 60px;">
+                      <div class="mb-3">A Genin from Team 10, a member of the Nara clan, Shikamaru is considered to be the smartest Genin of all the Konoha 11. Using his bloodline, Shikamaru can manipulate the shadows in the battlefield to disable and attack his enemies.</div>
+                    </div>
+                  </div>
+                  <div id="sidediv" class="mt-3">
+                    <span id="nabrd" class="fw-bold">Akimichi Chouji</span>
+                    <div class="d-flex align-items-center">
+                      <img src="../img/choji.png" class="img-fluid mb-3 me-2" style="width: 60px; height: 60px;">
+                      <div class="mb-3">A Genin from Team 10, Chouji is a member of the Akimichi clan, a large eater, and a close friend to his allies. While innately strong, Chouji is able to sacrifice his own life using special pills from his clan to become insanely powerful.</div>
+                    </div>
+                  </div>
+                  <div id="sidediv" class="mt-3">
+                    <span id="nabrd" class="fw-bold">Yamanaka Ino</span>
+                    <div class="d-flex align-items-center">
+                      <img src="../img/ino.png" class="img-fluid mb-3 me-2" style="width: 60px; height: 60px;">
+                      <div class="mb-3">A Genin from Team 10, Ino is a member of the Yamanaka clan, and a very confident and vain girl. Ino is able to use a variety of abilities to take over and control her enemies, making it difficult to tell friend from foe.</div>
+                    </div>
+                  </div>
+                  <div id="sidediv" class="mt-3">
+                    <span id="nabrd" class="fw-bold">Rock Lee</span>
+                    <div class="d-flex align-items-center">
+                      <img src="../img/lee.png" class="img-fluid mb-3 me-2" style="width: 60px; height: 60px;">
+                      <div class="mb-3">A member of team Gai, Lee is a genin with no talent at all in ninjutsu or genjutsu, so he has focused his life all on taijutsu. With his powerful hand to hand techniques, Lee can crush any defense with his immense power.</div>
+                    </div>
+                  </div>
+                  <div id="sidediv" class="mt-3">
+                    <span id="nabrd" class="fw-bold">Hyuuga Neji</span>
+                    <div class="d-flex align-items-center">
+                      <img src="../img/neji.png" class="img-fluid mb-3 me-2" style="width: 60px; height: 60px;">
+                      <div class="mb-3">A member of team Gai, Neji is the most talented member of the Hyuuga clan in both mind and body. Neji can use the most powerful techniques of his clan, shutting down an enemy's chakra or defending with an absolute defense.</div>
+                    </div>
+                  </div>
+                  <div id="sidediv" class="mt-3">
+                    <span id="nabrd" class="fw-bold">Tenten</span>
+                    <div class="d-flex align-items-center">
+                      <img src="../img/tenten.png" class="img-fluid mb-3 me-2" style="width: 60px; height: 60px;">
+                      <div class="mb-3">A member of team Gai, Tenten is a tomboyish weapon specialist who believes a kunoichi can be as strong as a male ninja. In battle, Tenten surrounds the battlefield in weapons, using them for damage and for disabling her opponents.</div>
+                    </div>
+                  </div>            
+              </div>
+          </div>
+          <footer class="mx-auto w-auto p-10 rounded-sm  text-center font-footer absolute inset-x-0 top-10 z-10 bg-hallo-nav dark:bg-dark-nav shadow-md bg-opacity-80 dark:bg-opacity-80">
+            Naruto-Arena.net is a turn-based, tactical online multiplayer game played in the browser.<br/>NARUTOARENA &copy; 2022-2023 MOATEZ. All rights reserved.                   
+          </footer>
+        <!--JQUERY-->
+        <script src="../js/jquery.js"></script>  
+        <!--JS-->
+        <script src="../js/script.js"></script>
+        <!--BS5-->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    </body>
+</html>

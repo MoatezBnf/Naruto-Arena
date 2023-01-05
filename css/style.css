@@ -4,6 +4,18 @@
 .nav-link:hover{
     background-color: #4a5662;
 }
+.dropdown-menu {
+    background-color: #2D3844;
+    color: white;
+}
+.dropdown-item {
+    background-color: #2D3844;
+    color: white;
+}
+.dropdown-item:hover {
+    background-color: #4a5662;
+    color: white;
+}
 body{
     background-color: #fcb13b;
 }
@@ -33,6 +45,9 @@ body{
 #nabtn{
     background-color: #ff0454;
 }
+#quizstart{
+    background-color: #ff0454;
+}
 #plr{
     color: white;
     font-size: 12px;
@@ -48,4 +63,7 @@ body{
 iframe {
     display:block;
     width:100%;
+}
+#readmore{
+    color:#fcb13b ;
 }
